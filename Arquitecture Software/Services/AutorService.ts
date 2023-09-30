@@ -1,7 +1,9 @@
 import { Autor } from "../Entities/Autor";
+import { IAutorService } from "../Interfaces/IAutorService";
 import { AutorRepository } from "../Repositories/AutorRepository";
 
-export class AutorService {
+
+export class AutorService implements IAutorService {
     constructor(private autorRepository: AutorRepository) {}
 
     agregarAutor(nombre: string, fechaNacimiento: Date): Autor {
@@ -14,3 +16,9 @@ export class AutorService {
         return this.autorRepository.obtenerPorId(id);
     }
 }
+
+
+
+
+
+
